@@ -19,20 +19,29 @@ public class SmokeManager : MonoBehaviour
         }
     }
 
+    public bool isSmoking = false;
+
     [SerializeField]
     private ParticleSystem ps;
 
-    private TCPServer server;
+    private float EXHALE_THRESHOLD = 50;
 
-    private float smokeAmount = 0;
+    private float EXHALE_TIMEOUT = 3.0f;
+
+    private TCPServer server;
 
     private float exhaustRate = 0;
 
-    public bool isSmoking = false;
+    private float previousExhaustRate = 0;
+
+    public bool canExhale = false;
+
+    private float exhaleStartTime = 9999;
 
     public void BreatheSmoke()
     {
-        smokeAmount += 150;
+        canExhale = true;
+        exhaleStartTime = Time.time;
     }
 
     void Start()
@@ -47,40 +56,33 @@ public class SmokeManager : MonoBehaviour
 
     void Update()
     {
+        if (!server.IsConnected()) return;
+
+
         var em = ps.emission;
-        if (server.IsConnected())
+        float normalizedCo2 = Map((int)(server.GetCo2()), 0, 32000, 0, 400);
+
+        if (normalizedCo2 > EXHALE_THRESHOLD)
         {
-            
-            float normalizedCo2 = Map((int)(server.GetCo2()), 0, 32000, 0, 400);
-            Debug.Log(normalizedCo2);
-
-            if (normalizedCo2 > 50)
-            {
-                exhaustRate = normalizedCo2;
-            }
-            else
-            {
-                exhaustRate = 0;
-            }
-
-            em.rateOverTime = exhaustRate;
+            exhaustRate = normalizedCo2;
         }
         else
         {
-            em.rateOverTime = 0;
+            exhaustRate = 0;
         }
 
-
-        if (smokeAmount > 0 && !isSmoking)
+        if (canExhale && !isSmoking)
         {
             ps.Play();
-            smokeAmount -= (exhaustRate * 0.3f);
         }
-
-        if (smokeAmount <= 0 || isSmoking)
+        if (isSmoking || !canExhale)
         {
             ps.Stop();
         }
-        //Debug.Log(smokeAmount);
+
+        em.rateOverTime = exhaustRate;
+        if(Time.time - exhaleStartTime > EXHALE_TIMEOUT){
+            canExhale = false;
+        }
     }
 }
