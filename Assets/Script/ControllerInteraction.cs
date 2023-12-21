@@ -44,6 +44,7 @@ public class ControllerInteraction : MonoBehaviour
             if (OVRInput.Get(OVRInput.Button.PrimaryThumbstick, OVRInput.Controller.RTouch))
             {
                 StartInteraction();
+                Debug.Log("Start");
             }
             else{
                 EndInteraction();
@@ -53,6 +54,7 @@ public class ControllerInteraction : MonoBehaviour
             if (OVRInput.Get(OVRInput.Button.PrimaryThumbstick, OVRInput.Controller.LTouch))
             {
                 StartInteraction();
+                Debug.Log("Start");
             }
             else{
                 EndInteraction();
