@@ -53,7 +53,7 @@ public class SmokeManager : MonoBehaviour
             float normalizedCo2 = Map((int)(server.GetCo2()), 0, 3200, 0, 400);
             Debug.Log(normalizedCo2);
 
-            if (normalizedCo2 > 100)
+            if (normalizedCo2 > 200)
             {
                 exhaustRate = normalizedCo2;
             }
@@ -73,9 +73,10 @@ public class SmokeManager : MonoBehaviour
         if (smokeAmount > 0 && !isSmoking)
         {
             ps.Play();
-            smokeAmount -= exhaustRate;
+            smokeAmount -= (exhaustRate * 0.3f);
         }
-        else if (smokeAmount <= 0 || isSmoking)
+
+        if (smokeAmount <= 0 || isSmoking)
         {
             ps.Stop();
         }
