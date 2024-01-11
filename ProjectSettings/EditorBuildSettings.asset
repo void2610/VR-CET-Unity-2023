@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SmokingRoom.unity
+    path: Assets/Scenes/Develop/SmokingRoom.unity
     guid: 8738972631fd7144d800021b8cf0e576
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 43c51198188c0fc47b98961b37bc31af, type: 2}
