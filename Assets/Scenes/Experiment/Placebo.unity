@@ -1829,6 +1829,7 @@ GameObject:
   - component: {fileID: 1758639807}
   - component: {fileID: 1758639808}
   - component: {fileID: 1758639806}
+  - component: {fileID: 1758639809}
   m_Layer: 0
   m_Name: TestSphere
   m_TagString: Untagged
@@ -1915,6 +1916,19 @@ MonoBehaviour:
   _twoGrabTransformer: {fileID: 0}
   _targetTransform: {fileID: 0}
   _maxGrabPoints: -1
+--- !u!114 &1758639809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1758639804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a003ef946a59fc04ab0b519676416dc1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  floorHeight: 0
 --- !u!1 &1864607149
 GameObject:
   m_ObjectHideFlags: 0
@@ -1927,6 +1941,7 @@ GameObject:
   - component: {fileID: 1864607152}
   - component: {fileID: 1864607153}
   - component: {fileID: 1864607151}
+  - component: {fileID: 1864607154}
   m_Layer: 0
   m_Name: TestCube (1)
   m_TagString: Untagged
@@ -2013,6 +2028,19 @@ MonoBehaviour:
   _twoGrabTransformer: {fileID: 0}
   _targetTransform: {fileID: 0}
   _maxGrabPoints: -1
+--- !u!114 &1864607154
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1864607149}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a003ef946a59fc04ab0b519676416dc1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  floorHeight: 0
 --- !u!1 &1988761415
 GameObject:
   m_ObjectHideFlags: 0
@@ -10639,6 +10667,7 @@ GameObject:
   - component: {fileID: 2188456175832761909}
   - component: {fileID: 2188456175832761908}
   - component: {fileID: 2188456175832761912}
+  - component: {fileID: 2188456175832761913}
   m_Layer: 0
   m_Name: TestCube
   m_TagString: Untagged
@@ -10661,6 +10690,19 @@ MonoBehaviour:
   _grabbable: {fileID: 2188456175832761908}
   _rigidbody: {fileID: 2188456175832761909}
   _scaleMassWithSize: 1
+--- !u!114 &2188456175832761913
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2188456175832761911}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a003ef946a59fc04ab0b519676416dc1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  floorHeight: 0
 --- !u!114 &2188456176037321085
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -44639,18 +44639,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ps: {fileID: 5645020589022125879}
   lighterTrigger: {fileID: 7759185098088200488}
---- !u!114 &5684770482371683237
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5684770482371683242}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eeb09e4f18fd0954796cd0b766d28fa4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &5684770482371683238
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44697,9 +44685,9 @@ GameObject:
   - component: {fileID: 5684770482371683232}
   - component: {fileID: 5684770482371683239}
   - component: {fileID: 5684770482371683238}
-  - component: {fileID: 5684770482371683237}
   - component: {fileID: 5684770482371683236}
   - component: {fileID: 7759185098569536347}
+  - component: {fileID: 7759185098569536348}
   m_Layer: 0
   m_Name: Lighter
   m_TagString: Untagged
@@ -45907,6 +45895,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.020043254, y: 0.091834426, z: 0.02216895}
   m_Center: {x: 0.00029468536, y: 0.04068911, z: -0.0029573813}
+--- !u!114 &7759185098569536348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5684770482371683242}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a003ef946a59fc04ab0b519676416dc1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  floorHeight: 0
 --- !u!1 &7761955422390627149
 GameObject:
   m_ObjectHideFlags: 0
