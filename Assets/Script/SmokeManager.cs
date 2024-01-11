@@ -60,9 +60,11 @@ public class SmokeManager : MonoBehaviour
         if (server == null){
             Debug.Log(this.isSmoking);
             if(GameManager.instance.isFired && !this.isSmoking){
-                em.rateOverTime = 400;
+                ps.Play();
+                em.rateOverTime = 200;
             }
             else{
+                ps.Stop();
                 em.rateOverTime = 0;
             }
             return;
