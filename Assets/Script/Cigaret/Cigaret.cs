@@ -16,7 +16,7 @@ public class Cigaret : MonoBehaviour
     public bool canSmoke { private set; get; } = true;
     public bool isSmoking { private set; get; } = false;
     public float time { private set; get; } = 0.0f;
-    public float BURNINGTIME { private set; get; } = 90.0f;
+    public float BURNINGTIME { private set; get; } = 150.0f;
 
     public void StartSmoking()
     {
