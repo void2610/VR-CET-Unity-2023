@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private HandGrabInteractor handGrabLeft;
 
+    public bool isFired = false;
+
     //シングルトン実装
     public static GameManager instance;
 

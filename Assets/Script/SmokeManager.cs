@@ -56,10 +56,19 @@ public class SmokeManager : MonoBehaviour
 
     void Update()
     {
-        if (!server.IsConnected()) return;
-
-
         var em = ps.emission;
+        if (server == null){
+            Debug.Log(this.isSmoking);
+            if(GameManager.instance.isFired && !this.isSmoking){
+                em.rateOverTime = 400;
+            }
+            else{
+                em.rateOverTime = 0;
+            }
+            return;
+        }
+
+        
         float normalizedCo2 = Map((int)(server.GetCo2()), 0, 32000, 0, 400);
 
         if (normalizedCo2 > EXHALE_THRESHOLD)

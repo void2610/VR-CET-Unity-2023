@@ -16,17 +16,18 @@ public class Cigaret : MonoBehaviour
     public bool canSmoke { private set; get; } = true;
     public bool isSmoking { private set; get; } = false;
     public float time { private set; get; } = 0.0f;
-    public float BURNINGTIME { private set; get; } = 100.0f;
+    public float BURNINGTIME { private set; get; } = 90.0f;
 
     public void StartSmoking()
     {
-        if (!isSmoking && canSmoke)
+        if (!isSmoking && canSmoke && !GameManager.instance.isFired)
         {
             isSmoking = true;
             cigaretFire.GetComponent<Renderer>().material = fireMaterial;
             ps.Play();
             time = 0;
 
+            GameManager.instance.isFired = true;
         }
     }
 
@@ -38,6 +39,8 @@ public class Cigaret : MonoBehaviour
             canSmoke = false;
             cigaretFire.GetComponent<Renderer>().material = unfireMaterial;
             ps.Stop();
+
+            GameManager.instance.isFired = false;
         }
     }
 
