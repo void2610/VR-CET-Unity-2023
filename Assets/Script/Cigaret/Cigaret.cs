@@ -20,14 +20,14 @@ public class Cigaret : MonoBehaviour
 
     public void StartSmoking()
     {
-        if (!isSmoking && canSmoke && !GameManager.instance.isFired)
+        if (!isSmoking && canSmoke)
         {
             isSmoking = true;
             cigaretFire.GetComponent<Renderer>().material = fireMaterial;
             ps.Play();
             time = 0;
 
-            GameManager.instance.isFired = true;
+            GameManager.instance.isFired += 1;
         }
     }
 
@@ -40,7 +40,7 @@ public class Cigaret : MonoBehaviour
             cigaretFire.GetComponent<Renderer>().material = unfireMaterial;
             ps.Stop();
 
-            GameManager.instance.isFired = false;
+            GameManager.instance.isFired -= 1;
         }
     }
 
